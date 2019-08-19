@@ -168,3 +168,103 @@ body.impress-mouse-timeout {
 .impress-enabled #impress                 { pointer-events: auto }
 .impress-enabled #impress-toolbar         { pointer-events: auto }
 .impress-enabled #impress-console-button  { pointer-events: auto }
+
+
+/*
+ * Custom CSS for this presentation.
+ */
+
+@keyframes titleout {
+    0% {
+        /* state before the animation (same as .impress-on-title-slide) */
+        background:
+            url(../media/metoffice-globe-background.png),
+            -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background-size:
+            100% 100%;
+        background-position:
+            0px 0px,
+            0px 0px;
+        background-repeat:
+            no-repeat;
+        color: white;
+    }
+    100% {
+        /* state after the animation */
+        background:
+            url(../media/metoffice-globe-background.png),
+            -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background:
+            url(../media/metoffice-globe-background.png),
+            radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+        background-size:
+            100% 100%;
+        background-position:
+            0px -1000px,
+            0px 0px;
+        background-repeat:
+            no-repeat;
+        color: black;
+    }
+}
+
+.impress-on-title-slide {
+    background:
+        url(../media/metoffice-globe-background.png),
+        -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
+    background:
+        url(../media/metoffice-globe-background.png),
+        -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:
+        url(../media/metoffice-globe-background.png),
+        -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:
+        url(../media/metoffice-globe-background.png),
+        -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:
+        url(../media/metoffice-globe-background.png),
+        -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background:
+        url(../media/metoffice-globe-background.png),
+        radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
+    background-size:
+        100% 100%,
+        100% 100%;
+    background-position:
+        0px 0px,
+        0px 0px;
+    background-repeat:
+        no-repeat;
+    color: white;
+}
+
+.impress-on-introduction-to-cylc {
+    animation: titleout 3s;
+}
