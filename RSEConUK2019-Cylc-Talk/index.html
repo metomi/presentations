@@ -14,6 +14,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1024" />
   <link href="css/impress-demo.css" rel="stylesheet" />
+  <!--<script type="text/javascript" src="js/index.js"></script>-->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/minicylc.js"></script>
 </head>
 
 <body class="impress-not-supported">
@@ -50,15 +54,168 @@
     </div>
 
     <div
-      class="step"
-      data-rel-x="1w"
+      class="step full vflex"
+      data-rel-x="1.2w"
       data-rel-y="0"
     >
-      First Slide
+      <p>
+        This is a <em>simple</em> workflow
+      </p>
+      <embed
+        id="basic-workflow"
+        class="flexgrow"
+        src="media/graph/basic-workflow.svg"
+      />
+    </div>
+
+    <div class="step full vflex">
+      <p>
+        This is a <em>repeating</em> workflow
+      </p>
+      <embed
+        id="repeating-workflow"
+        class="flexgrow"
+        src="media/graph/repeating-workflow.svg"
+      />
+    </div>
+
+    <div class="step full vflex">
+      <p>
+        This is a <em>Cylc cycling</em> workflow
+      </p>
+      <embed
+        id="cycling-workflow"
+        class="flexgrow"
+        src="media/graph/cycling-workflow.svg"
+      />
+    </div>
+
+    <div
+      id="infinite-cycling"
+      class="step full vflex"
+    >
+      <p>
+        This is an <em>infinite cycling</em> workflow
+      </p>
+    </div>
+
+    <script type=text/javascript>
+      // write dependencies
+      const deps = [];
+      for (let i=0; i<100; i++) {
+        deps.push(`a${i} => c${i} => d${i}`);
+        deps.push(`a${i} => b${i}`);
+        deps.push(`a${i} => a${i+1}`);
+        deps.push(`c${i} => b${i+1}`);
+      }
+
+      // create graph
+      const infininte_animation = $('<embed />')
+        .addClass('minicylc flexgrow')
+        .data('focus', true)
+        .data('theme', 'demo')
+        .data('randomFactor', 0.5)
+        .data('dependencies', deps.join('//'))
+        .attr('src', 'media/graph/infinite-workflow.svg')[0]
+      $('#infinite-cycling').append(infininte_animation);
+
+      $(infininte_animation[0]).ready(function() {
+        const infinite_workflow = new MiniCylc(infininte_animation);
+        infinite_workflow.hold();
+        infinite_workflow.run();
+
+        // unhold when on slide
+        addClassNameListener(
+          $('#infinite-cycling')[0],
+          'active',
+          infinite_workflow.release.bind(infinite_workflow),
+          infinite_workflow.hold.bind(infinite_workflow)
+        );
+      });
+    </script>
+
+    <div class="step">
+      <p>
+        Cylc provides a <em>moving window</em> on an infinite workflow
+      </p>
+      <ul>
+        <li>Workflows can be <em>infinite</em></li>
+        <li>Complex workflows <em>scale</em></li>
+        <li><em>Advanced cycling</em> is possible</li>
+      </ul>
+    </div>
+
+    <div class="step full vflex" id="architecture">
+      <embed
+        class="flexgrow"
+        src="media/system-diagram.svg"
+      />
     </div>
 
     <div class="step">
-      Nth Slide
+      <p>Submit jobs with:</p>
+      <ul style="
+        position: relative;
+        left: 100px;
+        list-style: none;
+        font-size: 0.8em;"
+      >
+        <li>
+        <li>at</li>
+          background
+          <span
+            style="
+              font-size: 0.6em;
+              color: rgb(100,100,100);
+            "
+          >
+            (no batch submission system)
+          </span>
+        </li>
+        <li>loadleveler</li>
+        <li>lsf</li>
+        <li>moab</li>
+        <li>pbs</li>
+        <li>sge</li>
+        <li>slurm</li>
+      </ul>
+    </div>
+
+    <div class="step">
+      <table class="iconlist">
+        <tr>
+          <td>
+            <embed
+              width="200em"
+              src="media/icons/live.svg"
+            />
+          </td><td>
+            <em>Live monitoring</em> via GUI or CLI
+          </td>
+        </tr><tr>
+          <td>
+            <embed
+              width="200em"
+              src="media/icons/hand.svg"
+            />
+          </td><td>
+            <em>Manual intervention</em> with running workflows supported
+          </td>
+        </tr><tr>
+          <td>
+            <embed
+              width="200em"
+              src="media/icons/error.svg"
+            />
+          </td><td>
+            <em>Automatically rerun</em> failed jobs
+          </td>
+        </tr>
+      </table>
+
+
+
+      </ul>
     </div>
 
 

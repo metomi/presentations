@@ -1,0 +1,50 @@
+{# ok so not actually infinite but anyhoo #}
+{% set N = 100 %}
+
+digraph {
+    bgcolor="none"
+    fontname="sans"
+    fontsize="25"
+    style="invisible"
+
+    node [
+        fontname="sans",
+        fontcolor="#333333",
+        shape="circle",
+        color="transparent",
+        style="filled",
+        fillcolor="#aaaaaa"
+    ]
+
+    edge [
+        color="#555555",
+        arrowsize="0.6"
+    ]
+
+{% for i in range(N) %}
+    a{{i}} [fillcolor="#ff5966"]
+    b{{i}} [fillcolor="#00c697"]
+    c{{i}} [fillcolor="#00b3fd"]
+    d{{i}} [fillcolor="#ffcc00"]
+
+    subgraph cluster_{{i}} {
+        label = "{{i}}"
+
+        a{{i}} [label="a\n{{i}}"]
+        b{{i}} [label="b\n{{i}}"]
+        c{{i}} [label="c\n{{i}}"]
+        d{{i}} [label="d\n{{i}}"]
+
+        c{{i}} -> d{{i}}
+        a{{i}} -> b{{i}}
+        a{{i}} -> c{{i}}
+    }
+
+{% if not loop.last %}
+    a{{i}} -> a{{i+1}}
+    c{{i}} -> b{{i+1}}
+{% endif %}
+
+{% endfor %}
+
+}

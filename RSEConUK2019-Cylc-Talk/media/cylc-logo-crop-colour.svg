@@ -1,0 +1,28 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1">
+  <circle
+     id="circle2"
+     r="11.84773"
+     cy="78.402786"
+     cx="11.84773"
+     style="fill:#ff5966;stroke-width:0.42705294" />
+  <circle
+     id="circle4"
+     r="31.113796"
+     cy="64.848122"
+     cx="39.755642"
+     style="fill:#00c697;stroke-width:0.42705294" />
+  <circle
+     id="circle6"
+     r="15.962812"
+     cy="30.542973"
+     cx="25.363958"
+     style="fill:#ffcc00;stroke-width:0.42705294" />
+  <circle
+     id="circle8"
+     r="21.267235"
+     cy="24.269562"
+     cx="78.732765"
+     style="fill:#00b3fd;stroke-width:0.42705294" />
+</svg>

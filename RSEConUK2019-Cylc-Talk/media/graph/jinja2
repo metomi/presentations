@@ -1,0 +1,82 @@
+#!/usr/bin/env python3
+
+"""jinja2
+    Simple wrapper script for parsing jinja2 templates.
+
+usage: jinja2 FILE [OPTIONS]
+    $ jinja2 foo
+    $ cat foo | jinja2 -
+    $ jinja2 - <<< "my template string"
+    $ jinja2 --version
+    $ CYLC_VERSION=6.11.4 jinja2 --version
+
+arguments:
+    FILE - The name of the file to open or "-" to read from stdin.
+
+options:
+    --version       Print Jinja2 version and exit
+    --strict        Use the Jinja2 StrictUndefined variable option (as used
+                    by cylc).
+
+environment:
+    CYLC_VERSION    This script loads the Jinja2 version which is bundled with
+                    Cylc, if your setup uses the standard wrapper script
+                    setting CYLC_VERSION will enable this script to load the
+                    Jinja2 version appropriate to purpose.
+                    Note the value of CYLC_HOME / CYLC_HOME_ROOT are ignored.
+"""
+
+import jinja2
+from jinja2 import Environment, StrictUndefined, FileSystemLoader
+import os
+import re
+import sys
+from subprocess import Popen, PIPE
+
+
+def prepend_cylc_path():
+    env = dict(os.environ)
+    env.update({'CYLC_HOME': '', 'CYLC_HOME_ROOT': ''})
+    ret = Popen(['cylc', 'version', '--long'], env=env, stdout=PIPE,
+                stdin=open(os.devnull)).communicate()[0].decode().strip()
+    path = re.search(r'\((.*)\)', ret).groups()[0]
+    sys.path.insert(0, os.path.join(path, 'lib'))
+
+
+def main():
+    strict = False
+    if '--strict' in sys.argv:
+        strict = True
+        sys.argv.remove('--strict')
+
+    if sys.argv[1] == '-':
+        in_file = sys.stdin
+        dir_ = '.'
+    else:
+        in_file = open(sys.argv[1], 'r')
+        dir_ = os.path.dirname(sys.argv[1])
+
+    kwargs = dict(arg.rsplit('=', 1) for arg in sys.argv[2:])
+
+    kwargs = {
+        'loader': FileSystemLoader([dir_])
+    }
+    if strict:
+        kwargs['undefined'] = StrictUndefined
+
+    ret = Environment(**kwargs).from_string(in_file.read()).render(**kwargs)
+
+    return ret
+
+
+if __name__ == '__main__':
+    if '--prepend' in sys.argv:
+        sys.argv.remove('--prepend')
+        prepend_cylc_path()
+    if '--version' in sys.argv:
+        print(jinja2.__version__)
+        sys.exit(1)
+    if '--help' in sys.argv or len(sys.argv) == 1:
+        print(__doc__)
+        sys.exit(0)
+    print(main())
