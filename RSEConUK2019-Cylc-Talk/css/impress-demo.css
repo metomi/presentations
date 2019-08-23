@@ -323,11 +323,11 @@ em {
 .vflex {
     display: flex;
     flex-direction: column;
-
 }
 
 .vflex > * {
     margin: 0;
+
 }
 
 .vflex > .flexgrow {

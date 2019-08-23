@@ -1,0 +1,31 @@
+digraph {
+    node [
+        fontname="sans",
+        fontcolor="#333333",
+        shape="circle",
+        color="transparent",
+        style="filled",
+        fillcolor="#aaaaaa"
+    ]
+
+    edge [
+        color="#555555",
+        arrowsize="0.6"
+    ]
+
+    bgcolor="none"
+
+    a1 [fillcolor="#ff5966"]
+    b1 [fillcolor="#00c697"]
+    c1 [fillcolor="#00b3fd"]
+    d1 [fillcolor="#ffcc00"]
+
+    a1 [label="a"]
+    b1 [label="b"]
+    c1 [label="c"]
+    d1 [label="d"]
+
+    c1 -> d1
+    a1 -> b1
+    a1 -> c1
+}
