@@ -13,7 +13,7 @@
   />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=1024" />
-  <link href="css/impress-demo.css" rel="stylesheet" />
+  <link href="css/global-stylesheet.css" rel="stylesheet" />
 
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -41,11 +41,21 @@
       class="step"
     >
       <p>
-        Pursuing & supporting
-        <b>reproducible workflows</b>
-        for
-        <i>all</i> with
-        <b>Cylc</b></p>
+        Pursuing & supporting<br>
+        <b>reproducible workflows</b><br>
+        for <i>all</i> with<br>
+          <img src="media/cylc-logo-white.svg"
+          alt="cylc-logo-white" style="height:150px;">
+      </p>
+      <span
+        style="
+          font-size: 0.6em;
+          color: rgb(100,100,100);
+          "
+      >
+         Oliver Sanders & Sadie Bartholomew<br>
+         (representing the Met Office)
+      </span>
     </div>
 
 
@@ -56,7 +66,7 @@
       data-rel-y="1h"
       data-rel-to="title-slide"
     >
-      Introduction To Cylc
+      <b>Introduction</b> to Cylc
     </div>
 
     <div
@@ -144,6 +154,7 @@
       <p>
         Cylc provides a <em>moving window</em> on an infinite workflow
       </p>
+      <br>
       <ul>
         <li>Workflows can be <em>infinite</em></li>
         <li>Complex workflows <em>scale</em></li>
@@ -166,9 +177,9 @@
         list-style: none;
         font-size: 0.8em;"
       >
-        <li>
+        <br>
         <li>at</li>
-          background
+        <li>background
           <span
             style="
               font-size: 0.6em;
@@ -218,9 +229,6 @@
           </td>
         </tr>
       </table>
-
-
-
       </ul>
     </div>
 
@@ -240,65 +248,70 @@
       data-rel-x="1w"
       data-rel-y="0"
       >
-      <b>International</b> use (& development)!<br>
-       <i>Institutional</i> usage over 5 continents:
+      <em>International</em> use (& development)!<br>
+       <b>Institutional</b> usage over 5 continents:
       <div id="map" class="map"></div>
-       + <i>standalone</i> users
+       + <b>standalone</b> users
     </div>
 
     <div class="step">
-    <h2 align="right">Example context: <i>NWP</i></h2>
+    <h2 align="right">Example context: <em>NWP</em></h2>
     <div class="row">
       <div class="threecolumn">
         <br><br>
-        <p><i>standard</i> cycling<br> (cycle points are <i>labels</i>)</p>
+        <p><em>standard cycling</em><br> (cycle points are <i>labels</i>)</p>
+      <embed
+        id="cycling-workflow"
+        class="flexgrow"
+        src="media/graph/cycling-workflow.svg"
+        height="400px"
+      />
       </div>
       <div class="threecolumn central-col">
         <b>operations</b>
         <div id="curvedarrow"></div>
-        <br>seamless<br> (meta-scheduling)<br> "R2O" transition<br><br>
+        <br>seamless<br> (w.r.t meta-scheduling)<br> "R2O" transition<br><br>
         <div id="curvedarrowrotate"></div>
         <b>research</b>
       </div>
       <div class="threecolumn">
         <br><br>
-        <p><i>real-time</i> cycling</p>
+        <p><em>real-time cycling</em></p>
           <img src="media/clock-face.png" alt="clock-face"
-          style="height:300px;">
+          style="height:200px;position:absolute;top:300px;right:10px">
+      <embed
+        id="cycling-workflow"
+        class="flexgrow"
+        src="media/graph/cycling-workflow.svg"
+        height="400px"
+      />
       </div>
     </div>
-
-
     </div>
 
     <div class="step">
       <div class="grid-container">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
         <div class="grid-item">
-        used in <b>research <i>&</i> operations</b> (& going to & from these)
+          provides the meta-scheduling for workload on
+          <em>460,000 core HPC</em>
         </div>
-        <div class="grid-item"></div>
-        <div class="grid-item">demonstrated<br>
-        <b>scaling to 10,000s of tasks</b>
-        (with caveats)</div>
-        <div class="grid-item"></div>
         <div class="grid-item-central">
           <img src="media/metoffice-logo-black.png" alt="metoffice-logo-black"
           style="height:100px;">
           (largest Cylc-using site)
         </div>
+        <div class="grid-item">demonstrated<br>
+        <em>scaling to 10,000s of tasks</em>
+        (with caveats)</div>
         <div class="grid-item"></div>
         <div class="grid-item">
-          [scary figures]
+        used in <em>both</em> research & operations</b>
         </div>
         <div class="grid-item"></div>
-        <div class="grid-item">
-          [scary figures]
-        </div>
       </div>
-    </div>
-
-    <div class="step">
-      [Mammoth Cylc suite]
     </div>
 
     <div class="step">
@@ -345,7 +358,7 @@
     <div class="step">
       <h1>Workflow <b>design choices</b> include:</h1>
       <br>
-      <ul>
+      <ul font-size="0.6em">
         <li>
           <b>single monolithic</b> workflow <i>or</i> <b>multiple
           modular</b> ones (connected via inter-workflow triggering)
@@ -423,9 +436,9 @@
             <div class="centered-cont">2</div>
           </div>
           <img src="media/cherrypy-logo.png" alt="cherrypy-logo"
-            style="height:150px;">
+            style="height:125px;">
           <img src="media/rest-logo.png" alt="rest-logo"
-            style="height:150px;">
+            style="height:125px;">
           <img src="media/gtk-logo.png" alt="gtk-logo"
             style="height:200px;">
           <img src="media/latex-logo.png" alt="latex-logo"
@@ -462,7 +475,7 @@
       <a href="https://github.com/cylc/cylc-ui/files/3362486/design.document.pdf">design</a>...
       <img src="media/cylc-8-mockup.png" alt="cylc-8-mockup"
         style="height:550px;">
-      <b>Improved UX</b> via user feedback
+      <b>Improved UX</b> after user feedback
     </div>
 
     <div class="step">
@@ -491,7 +504,11 @@
       data-rel-y="1h"
       data-rel-to="future-cylc"
     >
-      Sub-Title Slide
+      Thanks for listening!<br>
+      We welcome your questions.
+      <img src="media/cylc-logo-colour.svg" alt="cylc-logo-colour"
+        style="height:350px;">
+      <p align="right"><em>... for reproducible workflows</em></p>
     </div>
 
 
