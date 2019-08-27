@@ -30,7 +30,6 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
->>>>>>> c6f8245... Add section 2 & 3 outline slides + basic content for section 3
 blockquote, q {
     quotes: none;
 }
@@ -46,7 +45,7 @@ table {
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: "Trebuchet MS", sans-serif;
     min-height: 740px;
 
     background:
@@ -136,7 +135,7 @@ a:focus {
     -o-box-sizing:      border-box;
     box-sizing:         border-box;
 
-    font-family: 'PT Serif', georgia, serif;
+    font-family: "Trebuchet MS", sans-serif;
     font-size: 48px;
     line-height: 1.5;
 }
@@ -411,12 +410,12 @@ ol, ul {
 ul li:before {
     content: '';
     display: inline-block;
-    height: 80px;
-    width: 80px;
-    background-size: 80px;
+    height: 40px;
+    width: 40px;
+    background-size: 40px;
     background-image: url('../media/cylc-logo.svg');
     background-repeat: no-repeat;
-    margin-right: -10px;
+    margin-right: 20px;
     vertical-align: middle;
     background-position: center;
 }
@@ -424,8 +423,8 @@ ul li:before {
 /* Nine-section grid to allow for some points around a central title */
 .grid-container {
   display: grid;
-  grid-column-gap: 20px;
-  grid-row-gap: 75px;
+  grid-column-gap: 10px;
+  grid-row-gap: 50px;
   grid-template-columns: 200px auto 200px;
   grid-template-rows: 200px auto 200px;
   padding: 0px;
@@ -488,8 +487,8 @@ ul li:before {
 /* Create three equal columns that floats next to each other */
 .threecolumn {
   float: left;
-  width: 35%;
-  padding: 0px;
+  width: 30%;
+  padding: 10px;
   font-size: 40px;
 }
 .row:after {
@@ -498,7 +497,7 @@ ul li:before {
   clear: both;
 }
 .central-col {
-  width: 20%;
+  width: 30%;
 }
 
 /* OpenLayers map */
