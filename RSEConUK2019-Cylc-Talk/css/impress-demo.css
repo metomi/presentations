@@ -397,7 +397,7 @@ table.iconlist tr td:nth-child(1) {
 }
 .centered {
   position: absolute;
-  top: -20%;
+  top: -30%;
   left: 100%;
   transform: translate(-90%, -60%);
   text-align: center;
