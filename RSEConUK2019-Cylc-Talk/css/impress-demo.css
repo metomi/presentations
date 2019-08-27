@@ -2,6 +2,35 @@
  * Impress JS structure as adapted from the demo css.
  */
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+>>>>>>> c6f8245... Add section 2 & 3 outline slides + basic content for section 3
 blockquote, q {
     quotes: none;
 }
@@ -338,3 +367,143 @@ em {
 table.iconlist tr td:nth-child(1) {
     padding-right: 75px;
 }
+
+ /* Container holding the image and overlayed text */
+.container {
+  position: relative;
+  text-align: center;
+  color: black;
+}
+/* Centered text */
+.centered-cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ /* Manage two-column invisible layout for certain slides */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+}
+.left {
+  left: 0;
+}
+.right {
+  right: 0;
+}
+.centered {
+  position: absolute;
+  top: -30%;
+  left: 100%;
+  transform: translate(-90%, -60%);
+  text-align: center;
+}
+
+/* Cylc circles bullet points */
+/* Note pseudo-element 'before' is required to resize bullet icon image */
+ol, ul {
+    list-style: none;
+}
+ul li:before {
+    content: '';
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+    background-size: 80px;
+    background-image: url('../media/cylc-logo.svg');
+    background-repeat: no-repeat;
+    margin-right: -10px;
+    vertical-align: middle;
+    background-position: center;
+}
+
+/* Nine-section grid to allow for some points around a central title */
+.grid-container {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 75px;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 200px auto 200px;
+  padding: 0px;
+  /* background-color: red; (leave in so if need can quickly see grid lines) */
+}
+.grid-item {
+  padding: 0px;
+  text-align: center;
+  font-size: 35px;
+  /* background-color: white; (ditto, as above)*/
+}
+.grid-item-central {
+  padding: 20px;
+  text-align: center;
+  /* background-color: white; (ditto, as above)*/
+}
+
+
+#curvedarrow {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 90px solid transparent;
+  border-right: 90px solid;
+  transform: rotate(10deg);
+}
+#curvedarrow:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 30px solid;
+  border-radius: 200px 0 0 0;
+  top: -120px;
+  left: -90px;
+  width: 120px;
+  height: 120px;
+  transform: rotate(45deg);
+}
+#curvedarrowrotate {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 90px solid transparent;
+  border-right: 90px solid;
+  transform: rotate(190deg);
+}
+#curvedarrowrotate:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 30px solid;
+  border-radius: 200px 0 0 0;
+  top: -120px;
+  left: -90px;
+  width: 120px;
+  height: 120px;
+  transform: rotate(45deg);
+}
+
+/* Create three equal columns that floats next to each other */
+.threecolumn {
+  float: left;
+  width: 35%;
+  padding: 0px;
+  font-size: 40px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.central-col {
+  width: 20%;
+}
+
+/* OpenLayers map */
+.map {
+   height: 100%;
+   width: 110%;
+}
+>>>>>>> ba7b897... Add in basic content for section 2
