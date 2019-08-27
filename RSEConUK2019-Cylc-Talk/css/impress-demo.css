@@ -499,6 +499,11 @@ ul li:before {
 }
 .central-col {
   width: 20%;
+}
 
+/* OpenLayers map */
+.map {
+   height: 100%;
+   width: 110%;
 }
 >>>>>>> ba7b897... Add in basic content for section 2
