@@ -420,3 +420,85 @@ ul li:before {
     vertical-align: middle;
     background-position: center;
 }
+
+/* Nine-section grid to allow for some points around a central title */
+.grid-container {
+  display: grid;
+  grid-column-gap: 20px;
+  grid-row-gap: 75px;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 200px auto 200px;
+  padding: 0px;
+  /* background-color: red; (leave in so if need can quickly see grid lines) */
+}
+.grid-item {
+  padding: 0px;
+  text-align: center;
+  font-size: 35px;
+  /* background-color: white; (ditto, as above)*/
+}
+.grid-item-central {
+  padding: 20px;
+  text-align: center;
+  /* background-color: white; (ditto, as above)*/
+}
+
+
+#curvedarrow {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 90px solid transparent;
+  border-right: 90px solid;
+  transform: rotate(10deg);
+}
+#curvedarrow:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 30px solid;
+  border-radius: 200px 0 0 0;
+  top: -120px;
+  left: -90px;
+  width: 120px;
+  height: 120px;
+  transform: rotate(45deg);
+}
+#curvedarrowrotate {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-top: 90px solid transparent;
+  border-right: 90px solid;
+  transform: rotate(190deg);
+}
+#curvedarrowrotate:after {
+  content: "";
+  position: absolute;
+  border: 0 solid transparent;
+  border-top: 30px solid;
+  border-radius: 200px 0 0 0;
+  top: -120px;
+  left: -90px;
+  width: 120px;
+  height: 120px;
+  transform: rotate(45deg);
+}
+
+/* Create three equal columns that floats next to each other */
+.threecolumn {
+  float: left;
+  width: 35%;
+  padding: 0px;
+  font-size: 40px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.central-col {
+  width: 20%;
+
+}
+>>>>>>> ba7b897... Add in basic content for section 2
