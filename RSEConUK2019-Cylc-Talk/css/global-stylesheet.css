@@ -1,35 +1,3 @@
-/*
- * Impress JS structure as adapted from the demo css.
- */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-}
-
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-    display: block;
-}
-body {
-    line-height: 1;
-}
 blockquote, q {
     quotes: none;
 }
@@ -37,11 +5,6 @@ blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
     content: none;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
 }
 
 body {
@@ -402,24 +365,6 @@ table.iconlist tr td:nth-child(1) {
   text-align: center;
 }
 
-/* Cylc circles bullet points */
-/* Note pseudo-element 'before' is required to resize bullet icon image */
-ol, ul {
-    list-style: none;
-}
-ul li:before {
-    content: '';
-    display: inline-block;
-    height: 40px;
-    width: 40px;
-    background-size: 40px;
-    background-image: url('../media/cylc-logo.svg');
-    background-repeat: no-repeat;
-    margin-right: 20px;
-    vertical-align: middle;
-    background-position: center;
-}
-
 /* Nine-section grid to allow for some points around a central title */
 .grid-container {
   display: grid;
@@ -505,4 +450,3 @@ ul li:before {
    height: 100%;
    width: 110%;
 }
->>>>>>> ba7b897... Add in basic content for section 2
