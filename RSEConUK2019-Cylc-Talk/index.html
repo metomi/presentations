@@ -135,7 +135,7 @@
         .attr('src', 'media/graph/infinite-workflow.svg')[0]
       $('#infinite-cycling').append(infininte_animation);
 
-      $(infininte_animation[0]).ready(function() {
+      infininte_animation.onload = function() {
         const infinite_workflow = new MiniCylc(infininte_animation);
         infinite_workflow.hold();
         infinite_workflow.run();
@@ -147,7 +147,7 @@
           infinite_workflow.release.bind(infinite_workflow),
           infinite_workflow.hold.bind(infinite_workflow)
         );
-      });
+      };
     </script>
 
     <div class="step">
