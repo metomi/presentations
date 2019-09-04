@@ -70,6 +70,7 @@
     </div>
 
     <div
+      id="simple-workflow"
       class="step full vflex"
       data-rel-x="1.2w"
       data-rel-y="0"
@@ -84,18 +85,60 @@
       />
     </div>
 
-    <div class="step full vflex">
+    <div
+      id="repeating-workflow"
+      class="step full vflex"
+    >
       <p>
         This is a <em>repeating</em> workflow
       </p>
       <embed
-        id="repeating-workflow"
-        class="flexgrow"
-        src="media/graph/repeating-workflow.svg"
+        id="repeating-workflow2"
+        class="flexgrow substep flash"
+        src="media/graph/repeating-workflow2.svg"
       />
     </div>
 
-    <div class="step full vflex">
+    <script type=text/javascript>
+      // write dependencies
+      const repeating_deps = [];
+      for (let i=1; i<4; i++) {
+        repeating_deps.push(`a${i} => c${i} => d${i}`);
+        repeating_deps.push(`a${i} => b${i}`);
+        repeating_deps.push(`b${i} => a${i+1}`);
+        repeating_deps.push(`d${i} => a${i+1}`);
+      }
+
+      // create graph
+      const repeating_animation = $('<embed />')
+        .addClass('minicylc flexgrow substep flash')
+        .data('mainLoopStep', '1500')
+        .data('theme', 'demo')
+        .data('dependencies', repeating_deps.join('//'))
+        .attr('src', 'media/graph/repeating-workflow1.svg')[0]
+      $('#repeating-workflow').append(repeating_animation);
+      $('#repeating-workflow2').before(repeating_animation);
+
+      var repeating_workflow;
+      repeating_animation.onload = function() {
+        repeating_workflow = new MiniCylc(repeating_animation);
+        repeating_workflow.hold();
+        repeating_workflow.run();
+
+        // unhold when on slide
+        addClassNameListener(
+          $('#repeating-workflow')[0],
+          'active',
+          repeating_workflow.release.bind(repeating_workflow),
+          repeating_workflow.hold.bind(repeating_workflow)
+        );
+      };
+    </script>
+
+    <div
+      id="cycling-workflow"
+      class="step full vflex"
+    >
       <p>
         This is a <em>Cylc cycling</em> workflow
       </p>
@@ -150,11 +193,13 @@
       };
     </script>
 
-    <div class="step">
+    <div
+      id="moving-window"
+      class="step"
+    >
       <p>
         Cylc provides a <em>moving window</em> on an infinite workflow
       </p>
-      <br>
       <ul>
         <li>Workflows can be <em>infinite</em></li>
         <li>Complex workflows <em>scale</em></li>
@@ -162,14 +207,119 @@
       </ul>
     </div>
 
-    <div class="step full vflex" id="architecture">
+    <div
+      id="advanced-cycling"
+      class="step full vflex"
+    >
+      <p>Workflows with multiple <em>cycle intervals</em></p>
+      <embed
+        class="flexgrow substep flash"
+        src="media/multiple-recurrences/1.svg"
+      />
+      <embed
+        class="flexgrow substep flash"
+        src="media/multiple-recurrences/2.svg"
+      />
+      <embed
+        class="flexgrow substep flash"
+        src="media/multiple-recurrences/3.svg"
+      />
+      <embed
+        class="flexgrow substep flash"
+        src="media/multiple-recurrences/4.svg"
+      />
+    </div>
+
+    <div
+      id="cylc-features-1"
+      class="step"
+    >
+      <table class="iconlist">
+        <tr>
+          <td>
+            <embed
+              width="150em"
+              src="media/icons/123.svg"
+            />
+          </td><td>
+            <em>Arbitrary</em> (integer) cycling
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <embed
+              width="120em"
+              src="media/icons/clock.svg"
+            />
+          </td><td>
+            <em>Real time</em> cycling
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <embed
+              width="150em"
+              src="media/icons/play.svg"
+            />
+          </td><td>
+            <em>Simulated time</em> cycling
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <embed
+              width="120em"
+              src="media/icons/satellite.svg"
+            />
+          </td><td>
+            <em>Externally driven</em> cycling
+          </td>
+        </tr>
+      </table>
+      </ul>
+    </div>
+
+    <div
+      id="basic-configuration"
+      class="step full vflex"
+    >
+      <p>This is a <em>simple</em> workflow definition</p>
+      <div id="basic-configuration-area"></div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#basic-configuration-area').load('media/rc/simple.html');
+        });
+      </script>
+    </div>
+
+    <div
+      id="cycling-configuration"
+      class="step full vflex"
+    >
+      <p>This is a <em>Cycling</em> workflow definition</p>
+      <div id="cycling-configuration-area"></div>
+      <script type="text/javascript">
+        $(document).ready(function() {
+          $('#cycling-configuration-area').load('media/rc/cycling.html');
+        });
+      </script>
+    </div>
+
+    <div
+      id="architecture"
+      class="step full vflex"
+    >
+      <p>System architecture</p>
       <embed
         class="flexgrow"
         src="media/system-diagram.svg"
       />
     </div>
 
-    <div class="step">
+    <div
+      id="job-submission"
+      class="step"
+    >
       <p>Submit jobs with:</p>
       <ul style="
         position: relative;
@@ -198,7 +348,10 @@
       </ul>
     </div>
 
-    <div class="step">
+    <div
+      id="cylc-features-2"
+      class="step"
+    >
       <table class="iconlist">
         <tr>
           <td>
