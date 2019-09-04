@@ -39,22 +39,33 @@
     <div
       id="title-slide"
       class="step"
+      style="
+        width: 900px; /* fallback for older browsers */
+        width: 90vw;  /* 90% of screen (viewport) width */
+      "
     >
       <p>
         Pursuing & supporting<br>
         <b>reproducible workflows</b><br>
-        for <i>all</i> with<br>
-          <img src="media/cylc-logo-white.svg"
-          alt="cylc-logo-white" style="height:150px;">
+        for <i>all</i> with
       </p>
+      <img
+        src="media/cylc-logo-white.svg"
+        alt="cylc-logo-white"
+        style="
+          height:150px;
+          position: relative;
+          top: -25px;  /* bump the logo up a bit */
+        "
+      />
+      <br />
       <span
         style="
           font-size: 0.6em;
           color: rgb(100,100,100);
           "
       >
-         Oliver Sanders & Sadie Bartholomew<br>
-         (representing the Met Office)
+        Oliver Sanders & Sadie Bartholomew
       </span>
     </div>
 
@@ -652,19 +663,99 @@
 
     <!-- Closing Slides -->
     <div
-      id="fin"
+      id="esiwace-funding"
       class="step"
       data-rel-y="1h"
       data-rel-to="future-cylc"
+      style="text-align: center;"
     >
-      Thanks for listening!<br>
-      We welcome your questions.
-      <img src="media/cylc-logo-colour.svg" alt="cylc-logo-colour"
-        style="height:350px;">
-      <p align="right"><em>... for reproducible workflows</em></p>
+      <img
+        src="media/esiwace-logo.png"
+        alt="esiwace"
+        style="width:80%"
+      >
+      <p>
+        Cylc development is part-funded by
+        <a
+          class="button"
+          href="https://www.esiwace.eu"
+        >
+          ESiWACE
+        </a>
+      </p>
     </div>
 
-
+    <div
+      id="fin"
+      class="step"
+      data-rel-y="1h"
+    >
+      <p
+        style="font-size: 1.5em;"
+      >
+        Questions?
+      </p>
+      <table
+        class="iconlist"
+      >
+        <tr>
+          <td>
+            <img
+              src="media/icons/web.svg"
+              alt="website"
+              width="50"
+            />
+          </td><td>
+            <a href="https://cylc.github.io">
+              cylc.github.io
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="media/icons/mail.svg"
+              alt="mail"
+              width="50"
+            />
+          </td><td>
+            <a href="mailto:metomi@metoffice.gov.uk">
+              metomi@metoffice.gov.uk
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- see https://github.com/logos for licence and details -->
+            <img
+              src="media/icons/github.png"
+              alt="github"
+              width="50"
+            />
+          </td><td>
+            <a href="https://github.com/cylc/cylc-flow">
+              cylc/cylc-flow
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!--
+              discourse logo (GPL)
+              https://github.com/discourse/discourse/blob/master/LICENSE.txt
+            -->
+            <img
+              src="media/icons/discourse.png"
+              alt="discourse"
+              width="50"
+            />
+          </td><td>
+            <a href="https://cylc.discourse.group/">
+              cylc.discourse.group
+            </a>
+          </td>
+        </tr>
+      </table>
   </div>
 
   <!-- impress.js related: -->

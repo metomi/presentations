@@ -325,7 +325,7 @@ em {
 }
 
 table.iconlist tr td:nth-child(1) {
-    padding-right: 75px;
+    padding-right: 50px;
 }
 
 table.iconlist tr td:nth-child(1) > * {
