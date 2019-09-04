@@ -1,0 +1,77 @@
+digraph {
+    bgcolor="none"
+    fontname="sans"
+    fontsize="25"
+    style="dashed"
+
+    node [
+        fontname="sans",
+        fontcolor="#333333",
+        shape="circle",
+        color="transparent",
+        style="filled",
+        fillcolor="#aaaaaa"
+    ]
+
+    edge [
+        color="#555555",
+        arrowsize="0.6"
+    ]
+
+    a1 [fillcolor="#ff5966"]
+    b1 [fillcolor="#00c697"]
+    c1 [fillcolor="#00b3fd"]
+    d1 [fillcolor="#ffcc00"]
+    a2 [fillcolor="#ff5966"]
+    b2 [fillcolor="#00c697"]
+    c2 [fillcolor="#00b3fd"]
+    d2 [fillcolor="#ffcc00"]
+    a3 [fillcolor="#ff5966"]
+    b3 [fillcolor="#00c697"]
+    c3 [fillcolor="#00b3fd"]
+    d3 [fillcolor="#ffcc00"]
+
+    subgraph cluster_1 {
+        label = "1"
+
+        a1 [label="a\n1"]
+        b1 [label="b\n1"]
+        c1 [label="c\n1"]
+        d1 [label="d\n1"]
+
+        c1 -> d1
+        a1 -> b1
+        a1 -> c1
+    }
+
+    subgraph cluster_2 {
+        label = "2"
+
+        a2 [label="a\n2"]
+        b2 [label="b\n2"]
+        c2 [label="c\n2"]
+        d2 [label="d\n2"]
+
+        c2 -> d2
+        a2 -> b2
+        a2 -> c2
+    }
+
+    subgraph cluster_3 {
+        label = "3"
+
+        a3 [label="a\n3"]
+        b3 [label="b\n3"]
+        c3 [label="c\n3"]
+        d3 [label="d\n3"]
+
+        c3 -> d3
+        a3 -> b3
+        a3 -> c3
+    }
+
+    a1 -> a2 [constraint=false, color="#ff5966", penwidth="3"];
+    a2 -> a3 [constraint=false, color="#ff5966", penwidth="3"];
+    c1 -> b2 [constraint=false, color="#00b3fd", penwidth="5"];
+    c2 -> b3 [constraint=false, color="#00b3fd", penwidth="5"];
+}

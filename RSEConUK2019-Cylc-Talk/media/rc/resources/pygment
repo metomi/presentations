@@ -1,0 +1,82 @@
+#!/home/h06/osanders/miniconda3/envs/cylc8/bin/python
+
+import sys
+import argparse
+
+from pygments import highlight
+from pygments.formatters import HtmlFormatter, get_formatter_by_name, img
+from pygments.lexers import load_lexer_from_file, get_lexer_for_filename
+
+
+DEFAULT_FONT = {'font_name': 'Andale Mono', 'font_size': 50}
+
+
+def main(args):
+    formatter_kwargs = {
+        'style': args.theme
+    }
+
+    if args.output_file:
+        formatter_kwargs['full'] = True
+
+        formatter_name = args.output_file.rsplit('.', 1)[1]
+
+        for item in args.format_args:
+            key, value = item.split('=')
+            try:
+                formatter_kwargs[key] = int(value)
+            except TypeError:
+                formatter_kwargs[key] = value
+        try:
+            formatter = get_formatter_by_name(
+                formatter_name,
+                **formatter_kwargs
+            )
+        except img.FontNotFound:
+            print('No font set, using fallback: %s' % DEFAULT_FONT, sys.stderr)
+            formatter_kwargs.update(DEFAULT_FONT)
+            formatter = get_formatter_by_name(
+                formatter_name,
+                **formatter_kwargs
+            )
+    else:
+        formatter = HtmlFormatter(**formatter_kwargs)
+
+    if args.lexer_file and args.lexer_class:
+        lexer = load_lexer_from_file(args.lexer_file, args.lexer_class)
+    else:
+        lexer = get_lexer_for_filename(args.input_file)
+
+    with open(args.input_file, 'r') as input_file:
+        txt = input_file.read()
+        pargs = (txt, lexer, formatter)
+        if not args.output_file:
+            print(highlight(*pargs))
+        else:
+            try:
+                highlight(*pargs, open(args.output_file, 'wb+'))
+            except TypeError:
+                highlight(*pargs, open(args.output_file, 'w+'))
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('input_file', help='File to lex.')
+    parser.add_argument(
+        'output_file',
+        help='Output file with extension',
+        nargs='?'
+    )
+    parser.add_argument('--lexer-file', help='File containing custom lexer.')
+    parser.add_argument('--lexer-class', help='Name of lexer class.')
+    parser.add_argument('--theme', default='default',
+                        help='Name of pygments theme.')
+    parser.add_argument(
+        '-f', '--format', action='append', default=[], dest='format_args',
+        help='Formatter arguments in the form KEY=VALUE e.g. FONT_SIZE=50'
+    )
+    return parser.parse_args()
+
+
+if __name__ == '__main__':
+    main(parse_args())

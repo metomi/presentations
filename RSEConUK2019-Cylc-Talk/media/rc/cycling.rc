@@ -1,0 +1,11 @@
+[scheduling]
+    [[dependencies]]
+        [[[P1]]]  # repeat every cycle
+            graph = """
+                a => c => d
+                a => b
+
+                # the inter-cycle dependencies
+                a[-P1] => a
+                c[-P1] => c
+            """
