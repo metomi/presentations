@@ -39,22 +39,33 @@
     <div
       id="title-slide"
       class="step"
+      style="
+        width: 900px; /* fallback for older browsers */
+        width: 90vw;  /* 90% of screen (viewport) width */
+      "
     >
       <p>
         Pursuing & supporting<br>
         <b>reproducible workflows</b><br>
-        for <i>all</i> with<br>
-          <img src="media/cylc-logo-white.svg"
-          alt="cylc-logo-white" style="height:150px;">
+        for <i>all</i> with
       </p>
+      <img
+        src="media/cylc-logo-white.svg"
+        alt="cylc-logo-white"
+        style="
+          height:150px;
+          position: relative;
+          top: -25px;  /* bump the logo up a bit */
+        "
+      />
+      <br />
       <span
         style="
           font-size: 0.6em;
           color: rgb(100,100,100);
           "
       >
-         Oliver Sanders & Sadie Bartholomew<br>
-         (representing the Met Office)
+        Oliver Sanders & Sadie Bartholomew
       </span>
     </div>
 
@@ -143,7 +154,7 @@
         This is a <em>Cylc cycling</em> workflow
       </p>
       <embed
-        id="cycling-workflow"
+        id="cycling-workflow-svg"
         class="flexgrow"
         src="media/graph/cycling-workflow.svg"
       />
@@ -238,7 +249,7 @@
         <tr>
           <td>
             <embed
-              width="150em"
+              style="width: 150em"
               src="media/icons/123.svg"
             />
           </td><td>
@@ -248,7 +259,7 @@
         <tr>
           <td>
             <embed
-              width="120em"
+              style="width: 120em"
               src="media/icons/clock.svg"
             />
           </td><td>
@@ -258,7 +269,7 @@
         <tr>
           <td>
             <embed
-              width="150em"
+              style="width: 150em"
               src="media/icons/play.svg"
             />
           </td><td>
@@ -268,7 +279,7 @@
         <tr>
           <td>
             <embed
-              width="120em"
+              style="width: 120em"
               src="media/icons/satellite.svg"
             />
           </td><td>
@@ -276,7 +287,6 @@
           </td>
         </tr>
       </table>
-      </ul>
     </div>
 
     <div
@@ -356,7 +366,7 @@
         <tr>
           <td>
             <embed
-              width="200em"
+              style="width: 200em"
               src="media/icons/live.svg"
             />
           </td><td>
@@ -365,7 +375,7 @@
         </tr><tr>
           <td>
             <embed
-              width="200em"
+              style="width: 200em"
               src="media/icons/hand.svg"
             />
           </td><td>
@@ -374,7 +384,7 @@
         </tr><tr>
           <td>
             <embed
-              width="200em"
+              style="width: 200em"
               src="media/icons/error.svg"
             />
           </td><td>
@@ -382,7 +392,6 @@
           </td>
         </tr>
       </table>
-      </ul>
     </div>
 
 
@@ -408,38 +417,36 @@
     </div>
 
     <div class="step">
-    <h2 align="right">Example context: <em>NWP</em></h2>
-    <div class="row">
-      <div class="threecolumn">
-        <br><br>
-        <p><em>standard cycling</em><br> (cycle points are <i>labels</i>)</p>
-      <embed
-        id="cycling-workflow"
-        class="flexgrow"
-        src="media/graph/cycling-workflow.svg"
-        height="400px"
-      />
-      </div>
-      <div class="threecolumn central-col">
-        <b>operations</b>
-        <div id="curvedarrow"></div>
-        <br>seamless<br> (w.r.t meta-scheduling)<br> "R2O" transition<br><br>
-        <div id="curvedarrowrotate"></div>
-        <b>research</b>
-      </div>
-      <div class="threecolumn">
-        <br><br>
-        <p><em>real-time cycling</em></p>
+      <h2 style="text-align: right">Example context: <em>NWP</em></h2>
+      <div class="row">
+        <div class="threecolumn">
+          <br><br>
+          <p><em>standard cycling</em><br> (cycle points are <i>labels</i>)</p>
+        <embed
+          class="flexgrow"
+          src="media/graph/cycling-workflow.svg"
+          height="400"
+        />
+        </div>
+        <div class="threecolumn central-col">
+          <b>operations</b>
+          <div id="curvedarrow"></div>
+          <br>seamless<br> (w.r.t meta-scheduling)<br> "R2O" transition<br><br>
+          <div id="curvedarrowrotate"></div>
+          <b>research</b>
+        </div>
+        <div class="threecolumn">
+          <br><br>
+          <p><em>real-time cycling</em></p>
           <img src="media/clock-face.png" alt="clock-face"
           style="height:200px;position:absolute;top:300px;right:10px">
-      <embed
-        id="cycling-workflow"
-        class="flexgrow"
-        src="media/graph/cycling-workflow.svg"
-        height="400px"
-      />
+          <embed
+            class="flexgrow"
+            src="media/graph/cycling-workflow.svg"
+            height="400"
+          />
+        </div>
       </div>
-    </div>
     </div>
 
     <div class="step">
@@ -461,14 +468,14 @@
         (with caveats)</div>
         <div class="grid-item"></div>
         <div class="grid-item">
-        used in <em>both</em> research & operations</b>
+        used in <em>both</em> research & operations
         </div>
         <div class="grid-item"></div>
       </div>
     </div>
 
     <div class="step">
-      <p align="right">Recent (research only) usage:</p>
+      <p style="text-align: right">Recent (research only) usage:</p>
           <img src="media/research-usage-graph.png" alt="research-usage-graph"
           style="height:600px;">
       <ul>
@@ -511,7 +518,7 @@
     <div class="step">
       <p>Workflow <b>design choices</b> include:</p>
       <br>
-      <ul font-size="0.6em">
+      <ul style="font-size: 0.6em">
         <li>
           <b>single monolithic</b> workflow <i>or</i> <b>multiple
           modular</b> ones (connected via inter-workflow triggering)
@@ -596,7 +603,6 @@
             style="height:200px;">
           <img src="media/latex-logo.png" alt="latex-logo"
             style="height:100px;">
-          </p>
         </div>
       </div>
       <div class="split right">
@@ -618,7 +624,6 @@
             style="height:150px;">
           <img src="media/sphinx-logo.png" alt="sphinx-logo"
             style="height:75px;">
-          </p>
         </div>
       </div>
     </div>
@@ -652,18 +657,100 @@
 
     <!-- Closing Slides -->
     <div
-      id="fin"
+      id="esiwace-funding"
       class="step"
       data-rel-y="1h"
       data-rel-to="future-cylc"
+      style="text-align: center;"
     >
-      Thanks for listening!<br>
-      We welcome your questions.
-      <img src="media/cylc-logo-colour.svg" alt="cylc-logo-colour"
-        style="height:350px;">
-      <p align="right"><em>... for reproducible workflows</em></p>
+      <img
+        src="media/esiwace-logo.png"
+        alt="esiwace"
+        style="width:80%"
+      >
+      <p>
+        Cylc development is part-funded by
+        <a
+          class="button"
+          href="https://www.esiwace.eu"
+        >
+          ESiWACE
+        </a>
+      </p>
     </div>
 
+    <div
+      id="fin"
+      class="step"
+      data-rel-y="1h"
+    >
+      <p
+        style="font-size: 1.5em;"
+      >
+        Questions?
+      </p>
+      <table
+        class="iconlist"
+      >
+        <tr>
+          <td>
+            <img
+              src="media/icons/web.svg"
+              alt="website"
+              width="50"
+            />
+          </td><td>
+            <a href="https://cylc.github.io">
+              cylc.github.io
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img
+              src="media/icons/mail.svg"
+              alt="mail"
+              width="50"
+            />
+          </td><td>
+            <a href="mailto:metomi@metoffice.gov.uk">
+              metomi@metoffice.gov.uk
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!-- see https://github.com/logos for licence and details -->
+            <img
+              src="media/icons/github.png"
+              alt="github"
+              width="50"
+            />
+          </td><td>
+            <a href="https://github.com/cylc/cylc-flow">
+              cylc/cylc-flow
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <!--
+              discourse logo (GPL)
+              https://github.com/discourse/discourse/blob/master/LICENSE.txt
+            -->
+            <img
+              src="media/icons/discourse.png"
+              alt="discourse"
+              width="50"
+            />
+          </td><td>
+            <a href="https://cylc.discourse.group/">
+              cylc.discourse.group
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
 
   </div>
 
