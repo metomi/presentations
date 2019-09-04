@@ -1,8 +1,8 @@
 # Metomi Presentations
 
 This site contains slides and further information for talks presented by the
-[Metomi team](href="https://www.metoffice.gov.uk/research/weather/weather-science-it/modelling-support)
-*(also known as the Modelling infrastructure Support Systems team)*.
+[Metomi team](https://www.metoffice.gov.uk/research/weather/weather-science-it/modelling-support)
+*(also known as the Modelling Infrastructure Support Systems team)*.
 
 ## The Metomi Team
 
@@ -23,10 +23,9 @@ infrastructure including:
 
 ## Presentations
 
-All presentations with resources provided in this repository are listed in the
-following table:
+All presentations with resources provided in this repository are listed here:
 
-* [Pursuing and supporting reproducible workflows for all with Cylc]( RSEConUK2019-Cylc-Talk/)
+* [Pursuing and supporting reproducible workflows for all with Cylc](RSEConUK2019-Cylc-Talk/)
 
   Introduction to the Cylc workflow engine and its usage at the Met Office.
 

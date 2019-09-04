@@ -12,26 +12,26 @@ body {
     min-height: 740px;
 
     background:
-        url(../media/metoffice-logo-black.png),
+        url(../media/met-office-brand/metoffice-logo-black.png),
         rgb(215, 215, 215),
 
     -webkit-background:
-        url(../media/metoffice-logo-black.png),
+        url(../media/met-office-brand/metoffice-logo-black.png),
         -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
     background:
-        url(../media/metoffice-logo-black.png),
+        url(../media/met-office-brand/metoffice-logo-black.png),
         -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-black.png),
+        url(../media/met-office-brand/metoffice-logo-black.png),
         -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-black.png),
+        url(../media/met-office-brand/metoffice-logo-black.png),
         -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-black.png),
+        url(../media/met-office-brand/metoffice-logo-black.png),
         -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-black.png),
+        url(../media/met-office-brand/metoffice-logo-black.png),
         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
 
     background-size:
@@ -165,28 +165,28 @@ body.impress-mouse-timeout {
     0% {
         /* state before the animation (same as .impress-on-title-slide) */
         background:
-            url(../media/metoffice-logo-white.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-white.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
         background:
-            url(../media/metoffice-logo-white.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-white.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background:
-            url(../media/metoffice-logo-white.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-white.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background:
-            url(../media/metoffice-logo-white.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-white.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background
-            url(../media/metoffice-logo-white.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-white.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background:
-            url(../media/metoffice-logo-white.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-white.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background-size:
             200px,
@@ -203,28 +203,28 @@ body.impress-mouse-timeout {
     100% {
         /* state after the animation (~same as {body}) */
         background:
-            url(../media/metoffice-logo-black.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-black.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
         background:
-            url(../media/metoffice-logo-black.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-black.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background:
-            url(../media/metoffice-logo-black.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-black.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background:
-            url(../media/metoffice-logo-black.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-black.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background:
-            url(../media/metoffice-logo-black.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-black.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background:
-            url(../media/metoffice-logo-black.png),
-            url(../media/metoffice-globe-background.png),
+            url(../media/met-office-brand/metoffice-logo-black.png),
+            url(../media/met-office-brand/metoffice-globe-background.png),
             radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
         background-size:
             200px,
@@ -242,28 +242,28 @@ body.impress-mouse-timeout {
 
 .impress-on-title-slide {
     background:
-        url(../media/metoffice-logo-white.png),
-        url(../media/metoffice-globe-background.png),
+        url(../media/met-office-brand/metoffice-logo-white.png),
+        url(../media/met-office-brand/metoffice-globe-background.png),
         -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 500, from(rgb(240, 240, 240)), to(rgb(190, 190, 190)));
     background:
-        url(../media/metoffice-logo-white.png),
-        url(../media/metoffice-globe-background.png),
+        url(../media/met-office-brand/metoffice-logo-white.png),
+        url(../media/met-office-brand/metoffice-globe-background.png),
         -webkit-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-white.png),
-        url(../media/metoffice-globe-background.png),
+        url(../media/met-office-brand/metoffice-logo-white.png),
+        url(../media/met-office-brand/metoffice-globe-background.png),
         -moz-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-white.png),
-        url(../media/metoffice-globe-background.png),
+        url(../media/met-office-brand/metoffice-logo-white.png),
+        url(../media/met-office-brand/metoffice-globe-background.png),
         -ms-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-white.png),
-        url(../media/metoffice-globe-background.png),
+        url(../media/met-office-brand/metoffice-logo-white.png),
+        url(../media/met-office-brand/metoffice-globe-background.png),
         -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:
-        url(../media/metoffice-logo-white.png),
-        url(../media/metoffice-globe-background.png),
+        url(../media/met-office-brand/metoffice-logo-white.png),
+        url(../media/met-office-brand/metoffice-globe-background.png),
         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background-size:
         200px,
