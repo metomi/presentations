@@ -516,3 +516,15 @@ table.iconlist tr td:nth-child(1) > * {
 .highlight .vg { color: #aa0000 } /* Name.Variable.Global */
 .highlight .vi { color: #aa0000 } /* Name.Variable.Instance */
 .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+/*
+Adjust OpenLayers styling. Overriding is needed (hence 'important' usage)
+since the default CSS is taken from an online standard OpenLayers file which we
+cannot change, but don't want to bundle in.
+*/
+.ol-control button{
+    background-color: #00C798 !important;
+    font-size:0.5em !important;
+    display:block !important;
+    margin:1px !important;
+}

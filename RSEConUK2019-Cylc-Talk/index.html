@@ -403,7 +403,7 @@
 
     <!-- Section 2 - Cylc Usage -->
     <div
-      id="usage-of-cylc"
+      id="usage-and-community"
       class="step"
       data-rel-y="1h"
       data-rel-to="introduction-to-cylc"
@@ -412,17 +412,41 @@
     </div>
 
     <div
+      id="major-sites-map"
       class="step"
       data-rel-x="1w"
       data-rel-y="0"
       >
-      <em>International</em> use (& development)!<br>
-       <b>Institutional</b> usage over 5 continents:
+      Major sites using Cylc:<br>
+          <span
+            style="
+              font-size: 0.6em;
+              color: rgb(100,100,100);
+            "
+          >
+            (zoom out!)
+          </span>
       <div id="map" class="map"></div>
-       + <b>standalone</b> users
+      <em>International</em> use [<img
+              src="media/icons/mapped-user-site.svg"
+              alt="mail"
+              width="35"
+            /> (+ <img
+              src="media/icons/mapped-dev-site.svg"
+              alt="mail"
+              width="35"
+            />)]<br> & development [<img
+              src="media/icons/mapped-dev-site.svg"
+              alt="mail"
+              width="35"
+            />]
+
     </div>
 
-    <div class="step">
+    <div
+      id="weather-forecasting-example"
+      class="step"
+      >
       <h2 style="text-align: right">Example context: <em>NWP</em></h2>
       <div class="row">
         <div class="threecolumn">
@@ -455,7 +479,10 @@
       </div>
     </div>
 
-    <div class="step">
+    <div
+      id="met-office-figures"
+      class="step"
+      >
       <div class="grid-container">
         <div class="grid-item"></div>
         <div class="grid-item"></div>
@@ -481,7 +508,10 @@
       </div>
     </div>
 
-    <div class="step">
+    <div
+      id="running-suites-plot"
+      class="step"
+      >
       <p style="text-align: right">Recent (research only) usage:</p>
           <img src="media/plots/research-usage-graph.png"
           alt="research-usage-graph"
@@ -492,7 +522,16 @@
       </ul>
     </div>
 
-    <div class="step">
+    <div
+      id="some-suites-are-bigger-than-others"
+      class="step"
+      >
+    </div>
+
+    <div
+      id="development-overview"
+      class="step"
+      >
       <div class="grid-container">
         <div class="grid-item">
           fully <b>open-source</b>, via
@@ -524,7 +563,10 @@
       </div>
     </div>
 
-    <div class="step">
+    <div
+      id="workflow-design"
+      class="step"
+      >
       <p>Workflow <b>design choices</b> include:</p>
       <br>
       <ul style="font-size: 0.6em">
@@ -540,7 +582,10 @@
       </ul>
     </div>
 
-    <div class="step">
+    <div
+      id="support-available"
+      class="step"
+      >
       <div class="grid-container">
         <div class="grid-item">
           issue tracking & links to documentation & website etc.<br> via
@@ -583,15 +628,16 @@
 
     <!-- Section 3 - Cylc Future -->
     <div
-      id="future-cylc"
+      id="future-cylc-8"
       class="step"
       data-rel-y="1h"
-      data-rel-to="usage-of-cylc"
+      data-rel-to="usage-and-community"
       >
       The <b>Future</b> of Cylc
     </div>
 
     <div
+      id="new-tech-stack"
       class="step"
       data-rel-x="1w"
       data-rel-y="0"
@@ -641,7 +687,10 @@
       </div>
     </div>
 
-    <div class="step">
+    <div
+      id="new-web-UI"
+      class="step"
+      >
       <b>Integrated</b> browser-based
       <a href="https://github.com/cylc/cylc-ui/files/3362486/design.document.pdf">design</a>...
       <img src="media/compound-visuals/cylc-8-mockup.png" alt="cylc-8-mockup"
@@ -649,7 +698,26 @@
       <b>Improved UX</b> after user feedback
     </div>
 
-    <div class="step">
+    <!--
+         Section "4": Closing Slides (not really a section, but strictly this
+         final slide is not on the future of Cylc, so put on another level as
+         we ease into the closing slides which then go off diagonally.
+    -->
+    <div
+      id="the-present"
+      class="step"
+      data-rel-y="1h"
+      data-rel-to="future-cylc-8"
+      >
+      The <b>Present</b>: for now...
+    </div>
+
+    <div
+      id="how-to-install"
+      class="step"
+      data-rel-x="1w"
+      data-rel-y="0"
+      >
       <ul>
         <li><b>Cylc-8.0.0 "coming soon"</b> (<i>optimistic</i> estimate for
           release ~May 2020)
@@ -667,13 +735,10 @@
       </ul>
     </div>
 
-
-    <!-- Closing Slides -->
     <div
       id="esiwace-funding"
       class="step"
       data-rel-y="1h"
-      data-rel-to="future-cylc"
       style="text-align: center;"
     >
       <img
@@ -694,7 +759,6 @@
     <div
       id="fin"
       class="step"
-      data-rel-y="1h"
     >
       <p
         style="font-size: 1.5em;"
