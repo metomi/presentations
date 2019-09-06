@@ -330,6 +330,17 @@ table.iconlist tr td:nth-child(1) {
 
 table.iconlist tr td:nth-child(1) > * {
     vertical-align: middle;
+    padding-right: 50px;
+}
+
+table.comparison-table tr {
+    font-size: 32px;
+    padding: 30px;
+}
+
+table.comparison-table > .p {
+    margin: 0px;
+    padding: 0px;
 }
 
  /* Container holding the image and overlayed text */
@@ -431,26 +442,40 @@ table.iconlist tr td:nth-child(1) > * {
   transform: rotate(45deg);
 }
 
-/* Create three equal columns that floats next to each other */
-.threecolumn {
-  float: left;
-  width: 30%;
-  padding: 10px;
-  font-size: 40px;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.central-col {
-  width: 30%;
+/* FLEXBOX: leave in commented colouring for ease of seeing the boxes */
+.flex-container {
+  /* background-color: DodgerBlue; */
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
-/* OpenLayers map */
+.flex-container > div {
+  /* background-color: #f1f1f1; */
+  margin: 0px;
+  padding: 0px;
+  font-size: 24px;
+}
+
+.flex-container-vert {
+  /* background-color: DodgerBlue; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-container-vert > div {
+  /* background-color: #f1f1f1; */
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+}
+
+
+/* OpenLayers map: need it very wide so NZ & NIWA fit in on full zoom-out */
 .map {
-   height: 100%;
-   width: 110%;
+   height: 70%;
+   width: 100%;
 }
 
 .highlight {

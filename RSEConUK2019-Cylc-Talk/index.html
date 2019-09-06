@@ -22,6 +22,9 @@
   <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css"
    type="text/css">
 
+  <!-- Plotly JS: 1) use hosted script, compiled and minified plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
   <!-- Oliver's scripts -->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
@@ -61,18 +64,16 @@
         "
       />
       <br />
-      <span
+        <p
         style="
           font-size: 0.6em;
           color: rgb(179, 179, 179);
           "
-      >
-        <p>
+        >
           Oliver Sanders & Sadie Bartholomew<br>
-          <i>Modelling Infrastructure Support Systems</i> team<br>
+          <i>Modelling Infrastructure Support<br> Systems</i> team,
           <i>Met Office</i>
         </p>
-      </span>
     </div>
 
 
@@ -420,21 +421,11 @@
 
     <div
       id="major-sites-map"
-      class="step"
+      class="step full vflex"
       data-rel-x="1w"
       data-rel-y="0"
-      >
-      Major sites using Cylc:<br>
-          <span
-            style="
-              font-size: 0.6em;
-              color: rgb(100,100,100);
-            "
-          >
-            (zoom out!)
-          </span>
-      <div id="map" class="map"></div>
-      <em>International</em> use [<img
+       >
+      <p><em>International</em> use [<img
               src="media/icons/mapped-user-site.svg"
               alt="mail"
               width="35"
@@ -446,146 +437,278 @@
               src="media/icons/mapped-dev-site.svg"
               alt="mail"
               width="35"
-            />]
+				       />]</p>
+      <div id="map" class="map"></div>
+          <span
+            style="
+              font-size: 0.6em;
+              color: rgb(100,100,100);
+            "
+          >
+            Major sites using Cylc (zoom out fully & pan right!)
+          </span>
     </div>
 
     <div
       id="weather-forecasting-example"
-      class="step"
+      class="step full vflex"
       >
-      <h2 style="text-align: right">Example context: <em>NWP</em></h2>
-      <div class="row">
-        <div class="threecolumn">
-          <br><br>
-          <p><em>standard cycling</em><br> (cycle points are <i>labels</i>)</p>
-        <embed
-          class="flexgrow"
-          src="media/graph/cycling-workflow.svg"
-          height="400"
-        />
-        </div>
-        <div class="threecolumn central-col">
-          <b>operations</b>
-          <div id="curvedarrow"></div>
-          <br>seamless<br> (w.r.t meta-scheduling)<br> "R2O" transition<br><br>
-          <div id="curvedarrowrotate"></div>
+      <p>Example: <em>weather forecasting</em></p>
+      <div class="flex-container">
+
+        <div class="flex-container-vert" style="flex-basis: 250px">
+          <p>
+            <img
+              style="width:30%"
+              src="media/decorative/light-bulb.svg"
+              alt="light-bulb"
+            /><img
+              style="width:75%"
+              src="media/decorative/research-plot.svg"
+              alt="example-research-plot"
+            />
           <b>research</b>
+          </p>
         </div>
-        <div class="threecolumn">
-          <br><br>
-          <p><em>real-time cycling</em></p>
-          <img src="media/icons/clock.svg" alt="clock-face"
-          style="height:200px;position:absolute;top:300px;right:10px">
-          <embed
-            class="flexgrow"
-            src="media/graph/cycling-workflow.svg"
-            height="400"
-          />
+
+        <div style="flex-basis: 350px">
+        <div class="flex-container-vert">
+      <!-- Struggled to align arrow via style, so hack with another flexbox -->
+      <div class="flex-container">
+        <div>
+          <p>
+            <img
+              style="width: 75px; float: left"
+              src="media/icons/clock.svg"
+              alt="clock-icon"
+            />
+          <em>real-time</em><br> cycling
+          </p>
         </div>
+        <div id="curvedarrow"></div>
+     </div>
+
+      <div><p>seamless (meta-scheduling) "R2O"/"O2R"
+	  transition</p></div>
+
+      <!-- Struggled to align arrow via style, so hack with another flexbox -->
+      <div class="flex-container">
+        <div id="curvedarrowrotate"></div>
+         <div style="flex-basis: 350px">
+           <p>
+          <img
+              style="width: 125px;float:right"
+              src="media/icons/play.svg"
+              alt="play-icon"
+            />
+          <em>simulated<br> time</em><br> cycling
+           </p>
+        </div>
+     </div>
+
+        </div>
+        </div>
+
+        <div class="flex-container-vert" style="flex-basis: 250px">
+          <p><b>operations</b>
+            <img
+              style="width:75%"
+              src="media/decorative/weather-symbols.svg"
+              alt="weather-symbols"
+            /></p>
+        </div>
+
       </div>
     </div>
 
     <div
       id="met-office-figures"
-      class="step"
+      class="step full vflex"
       >
-      <div class="grid-container">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item">
-          provides the meta-scheduling for workload on
-          <em>460,000 core HPC</em>
+      <div class="flex-container">
+
+
+      <div class="flex-container-vert" style="flex-grow: 3">
+
+          <div style="flex-basis: 100px"></div>
+        <div>
+        demonstrated scaling to:
+          <ul>
+          <li><em>&tilde;1000s</em> of <em>recurrences</em></li><br>
+          <li><em>&tilde;10,000s</em> of <em>tasks</em></li><br>
+          <li><em>&tilde;100,000s</em> of <em>dependencies</em></li><br>
+          </ul>
         </div>
-        <div class="grid-item-central">
-          <img src="media/met-office-brand/metoffice-logo-black.png"
-            alt="metoffice-logo-black"
-            style="height:100px;">
-            (largest Cylc-using site)
         </div>
-        <div class="grid-item">demonstrated<br>
-        <em>scaling to 10,000s of tasks</em>
-        (with caveats)</div>
-        <div class="grid-item"></div>
-        <div class="grid-item">
-        used in <em>both</em> research & operations
+
+        <div class="flex-container-vert" style="flex-basis: 100px">
+            <div>
+              <img src="media/met-office-brand/metoffice-logo-black.png"
+                alt="metoffice-logo-black"
+                style="height:100px">
+            </div>
         </div>
-        <div class="grid-item"></div>
-      </div>
+
+        <div class="flex-container-vert" style="flex-grow: 2">
+          <div><p>used in <em>both</em><br> research &<br> operations</p></div>
+          <div style="flex-basis: 150px"></div>
+          <div>provides all meta-scheduling for the workload on
+          our <em>460,672 CPU/core HPC estate</em> (with
+          <em>15,600 TFLOPs</em> peak performance)
+          </div>
+          </div>
+        </div>
     </div>
 
     <div
       id="running-suites-plot"
-      class="step"
+      class="step full vflex"
       >
-      <p style="text-align: right">Recent (research only) usage:</p>
-          <img src="media/plots/research-usage-graph.png"
-          alt="research-usage-graph"
-          style="height:600px;">
-      <ul>
-        <li>record of nearly 300 unique users</li>
-        <li>a general upward trend</li>
+      <div id="running-suites-plotted"></div>
+      <!-- Plotly: 2) custom JS for plot of running MO research suites... -->
+      <!-- the data for the plot, stored separately to the plotting script: -->
+      <script type="text/javascript"
+        src="js/data/running_workflows_data.js"></script>
+      <!-- & the script to process the data above & renders it on a plot: -->
+      <script type="text/javascript"
+        src="js/running-suites-mo-research-plot.js"></script>
+      <ul style="font-size:0.8em">
+        <li><em>&gt; 500 consistently</em> since June</li>
+        <li>a general <em>upward trend</em> (ignoring noise)</li>
       </ul>
     </div>
 
     <div
       id="some-suites-are-bigger-than-others"
-      class="step"
+      class="step full vflex"
       >
+      <p>Met Office workflows are often <em>huge</em>!</p>
+          <span
+            style="
+              font-size: 0.6em;
+              color: rgb(100,100,100);
+            "
+          >
+            (by numbers of tasks, dependencies, recurrences...)
+          </span>
+      <img
+        class="flexgrow"
+        src="media/compound-visuals/cise-graph-figure.png"
+        style="width:70%;display:block;margin-left:auto;margin-right:auto"
+          alt="cise-graph-figure"
+      />
     </div>
 
     <div
       id="development-overview"
-      class="step"
+      class="step full vflex"
       >
       <div class="grid-container">
+
         <div class="grid-item">
-          fully <b>open-source</b>, via
+          fully <em>open-source</em>, via
           <img src="media/external-logos/github-logo-styled-text.png"
           alt="github-text"
           style="height:75px;align:right"><br>
           <a href="https://github.com/cylc">cylc organisation</a>
           (<i>GPLv3</i> license)
         </div>
-        <div class="grid-item">
-            <img src="media/external-logos/python-logo.png" alt="python-logo"
-              style="height:150px;">
-        <b>Python-powered</b> core scheduling code (with an otherwise
-        changing tech stack)
-        </div>
         <div class="grid-item"></div>
+        <div class="grid-item">
+            <img src="media/external-logos/python-logo.png"
+              alt="python-logo"
+              style="height:150px;">
+        <em>Python-powered</em> core scheduling code
+        </div>
         <div class="grid-item"></div>
         <div class="grid-item-central">Development:<br>
           ecosystem & history</div>
         <div class="grid-item"></div>
         <div class="grid-item"></div>
         <div class="grid-item">
-          &gt;10 years of development!
-          <img src="media/plots/github-commit-history.png"
-          alt="github-commit-history" style="height:150px;">
-          (shown are <i>git</i> code commits)
+          <em>&gt;10 years</em><br> of development!
         </div>
         <div class="grid-item"></div>
+
       </div>
     </div>
 
     <div
       id="workflow-design"
-      class="step"
+      class="step full vflex"
       >
-      <p>Workflow <b>design choices</b> include:</p>
-      <br>
-      <ul style="font-size: 0.6em">
-        <li>
-          <b>single monolithic</b> workflow <i>or</i> <b>multiple
-          modular</b> ones (connected via inter-workflow triggering)
-        </li>
-        <li><b>task granularity</b>: fine <i>or</i> coarse</li>
-        <li>
-          <b>task generation</b>: in-built parameterisation <i>or</i> templating
-        </li>
-        <li><b>task inheritance</b>: <i>structure</i></li>
-      </ul>
+      <p>Workflow <em>design choices</em> include:</p>
+      <table
+        class="comparison-table"
+      >
+        <tr>
+          <td>
+            single monolithic workflow
+          </td>
+          <td><em>modularity</em>
+            <img src="media/icons/scale-line-pos2.svg"
+              alt="scale-pos2"
+              style="height:50px;">
+          </td>
+          <td>
+            multiple connected workflows
+          <span
+            style="
+              font-size: 0.8em;
+              color: rgb(100,100,100);
+            "
+          >
+            (inter-workflow triggering)
+          </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            coarse
+          </td>
+          <td><em>task granularity</em>
+            <img src="media/icons/scale-line-pos1.svg"
+              alt="scale-pos1"
+              style="height:50px;">
+          </td>
+          <td>
+            fine
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            via in-built parameterisation
+          </td>
+          <td><em>task generation</em>
+            <img src="media/icons/scale-line-pos3.svg"
+              alt="scale-pos3"
+              style="height:50px;">
+          </td>
+          <td>
+            via templating
+          <span
+            style="
+              font-size: 0.8em;
+              color: rgb(100,100,100);
+            "
+          >
+            (Jinja2)
+          </span>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <br><em>runtime inheritance:</em>
+          </td>
+          <td colspan="2">
+            <br>hierarchy branching, levels & interconnections
+          </td>
+        </tr>
+
+      </table>
     </div>
 
     <div
@@ -594,8 +717,9 @@
       >
       <div class="grid-container">
         <div class="grid-item">
-          issue tracking & links to documentation & website etc.<br> via
-          <a href="https://github.com/cylc">cylc</a> on<br>
+          issue tracking & links etc.<br> via
+          <a href="https://github.com/cylc">cylc</a> organisation
+	  on<br>
           <img src="media/external-logos/github-logo.png" alt="github-octocat"
           style="height:100px;">
           <img src="media/external-logos/github-logo-styled-text.png"
@@ -603,16 +727,13 @@
           style="height:75px;">
 
         </div>
-        <div class="grid-item"></div>
+        <div class="grid-item">comprehensive<br><a href="https://cylc.github.io/doc/built-sphinx/index.html">documentation</a>!</div>
         <div class="grid-item">
-          (for individuals<br>
-          from selected<br>
-          <a href="https://www.esiwace.eu/services/support/overview">
-          eligible</a> institutions)
           formal support via
           <img src="media/external-logos/esiwace-logo.png" alt="esiwace-logo"
-          style="height:75px;">
-          (who part-fund the Cylc project)
+               style="height:60px">
+	    (for those from
+          <a href="https://www.esiwace.eu/services/support/overview">eligible</a> institutions)
         </div>
         <div class="grid-item"></div>
         <div class="grid-item-central">
@@ -647,11 +768,13 @@
         <img
           src="media/cylc-logo-variants/cylc-logo-greyscale.svg"
           style="height:100px;float:left;"
+          alt="cylc-logo-grey"
         /> 8
       </div>
       <img
         src="media/decorative/curved-road.svg"
         style="align:right"
+          alt="curved-road"
       />
     </div>
 
@@ -661,62 +784,119 @@
       data-rel-x="1w"
       data-rel-y="0"
       >
-      <p>Same<br><i>concept</i>,<br>with a<br>revised<br><i>tech</i><br>
-      <i>stack</i></p>
-      <div class="split left">
-        <div class="centered">
-          <p>Cylc-<b>7</b>:
+      <p>Same <i>concept</i>, <em>revised tech stack</em>:</p>
+
+      <table
+        class="comparison-table"
+      >
+        <tr>
+          <td>
+            <p>Scheduling & runtime</p>
+          </td>
+          <td>
           <div class="container">
             <img src="media/external-logos/python-logo.png" alt="python-logo"
-              style="height:175px;">
+              style="height:100px;">
             <div class="centered-cont">2</div>
           </div>
-          <img src="media/external-logos/cherrypy-logo.png" alt="cherrypy-logo"
-            style="height:125px;">
-          <img src="media/external-logos/rest-logo.png" alt="rest-logo"
-            style="height:125px;">
-          <img src="media/external-logos/gtk-logo.png" alt="gtk-logo"
-            style="height:200px;">
-          <img src="media/external-logos/latex-logo.png" alt="latex-logo"
-            style="height:100px;">
-        </div>
-      </div>
-      <div class="split right">
-        <div class="centered">
-          <p>Cylc-<b>8</b>:
+          </td>
+          <td>
+            <span>&#10230;</span> 
+          </td>
+          <td>
           <div class="container">
             <img src="media/external-logos/python-logo.png" alt="python-logo"
-              style="height:175px;">
+              style="height:100px;">
             <div class="centered-cont">3</div>
           </div>
-          <img src="media/external-logos/tornado-logo.png" alt="tornado-logo"
-            style="height:75px;">
-          <img src="media/external-logos/graphql-logo.png" alt="graphql-logo"
-            style="height:175px;">
-          <img src="media/external-logos/zmq-logo.png" alt="zmq-logo"
-            style="height:150px;">
-          <img src="media/external-logos/css3-and-html5-logos.png"
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Data & network layer</p>
+          </td>
+          <td>
+            <img src="media/external-logos/rest-logo.png" alt="rest-logo"
+            style="height:100px;">
+          </td>
+          <td>
+            <span>&#10230;</span> 
+          </td>
+          <td>
+            <img src="media/external-logos/graphql-logo.png" alt="graphql-logo"
+            style="height:100px;">
+            <img src="media/external-logos/homemade-zeromq-logo.svg" alt="zmq-logo"
+            style="height:100px;">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Web framework</p>
+          </td>
+          <td>
+            <img src="media/external-logos/cherrypy-logo.png"
+              alt="cherrypy-logo"
+              style="height:100px;">
+          </td>
+          <td>
+            <span>&#10230;</span> 
+          </td>
+          <td>
+            <img src="media/external-logos/tornado-logo.png"
+              alt="tornado-logo"
+              style="height:50px;">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Front-end</p>
+          </td>
+          <td>
+            <img src="media/external-logos/gtk-logo.png" alt="gtk-logo"
+            style="height:100px;">
+          </td>
+          <td>
+            <span>&#10230;</span> 
+          </td>
+          <td>
+            <img src="media/external-logos/css3-and-html5-logos.png"
             alt="css-html-logos"
-            style="height:125px;"> <img
+            style="height:75px;"> <img
             src="media/external-logos/vue-logo.png" alt="vue-logo"
-            style="height:150px;">
-          <img src="media/external-logos/sphinx-logo.png" alt="sphinx-logo"
-            style="height:75px;">
-        </div>
-      </div>
+            style="height:100px;">
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p>Documentation</p>
+          </td>
+          <td>
+            <img src="media/external-logos/latex-logo.png" alt="latex-logo"
+            style="height:50px;">
+          </td>
+          <td>
+            <span>&#10230;</span> 
+          </td>
+          <td>
+            <img src="media/external-logos/sphinx-logo.png" alt="sphinx-logo"
+            style="height:50px;">
+          </td>
+        </tr>
+      </table>
     </div>
 
     <div
       id="new-web-UI"
-      class="step"
+      class="step full vflex"
       >
-      <b>Integrated</b> browser-based
-      <a href="https://github.com/cylc/cylc-ui/files/3362486/design.document.pdf">design</a>...
-      <img src="media/compound-visuals/cylc-8-mockup.png" alt="cylc-8-mockup"
-        style="height:550px;">
-      <b>Improved UX</b> after user feedback
-    </div>
+      <p><em>Integrated</em>, <em>browser-based</em>
+      <a href="https://github.com/cylc/cylc-ui/files/3362486/design.document.pdf">design</a>...</p>
+      <img
+	 src="media/compound-visuals/cylc-8-mockup.png" alt="cylc-8-mockup"
+	 style="width:80%;display:block;margin-left:auto;margin-right:auto">
 
+      <p> with feedback-led <em>improved UX</em></p>
+          </div>
     <!--
          Section "4": Closing Slides (not really a section, but strictly this
          final slide is not on the future of Cylc, so put on another level as
@@ -733,20 +913,19 @@
 
     <div
       id="how-to-install"
-      class="step"
+      class="step vflex"
       data-rel-x="1w"
       data-rel-y="0"
       >
       <ul>
-        <li><b>Cylc-8.0.0 "coming soon"</b> (<i>optimistic</i> estimate for
+        <li><em>Cylc-8.0.0 "coming soon"</em> (<i>optimistic</i> estimate for
           release ~May 2020)
         </li>
-        <br>
-        <li><b>Until then, please use Cylc 7.8.<i>X</i></b>, e.g. the latest,
-          <a href="https://github.com/cylc/cylc-flow/releases/tag/7.8.3">
-          7.8<i>.3</i></a>, which is thoroughly tested & supported
+        <li>Until then, <em>please use Cylc 7.8.<i>X</i></em> (the
+	  latest, currently
+	  <a href="https://github.com/cylc/cylc-flow/releases/tag/7.8.4">
+          7.8<i>.4</i></a>) which is thoroughly tested & supported
         </li>
-        <br>
         <li>Install for Linux
           <a href="https://github.com/cylc/cylc-flow/blob/7.8.x/INSTALL.md">
           via GitHub</a>
