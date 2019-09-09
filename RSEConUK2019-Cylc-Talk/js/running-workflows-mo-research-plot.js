@@ -1,7 +1,7 @@
 // Data in 'data/running_workflows_data.js', imported via HTML before this runs
 
-// Convert raw data from suite analysis into form required by Plotly API.
-var FOMARTTED_RUNNING_SUITES_DATA = {
+// Convert raw data from workflow analysis into form required by Plotly API.
+var FOMARTTED_RUNNING_WORKFLOWS_DATA = {
   x: [],
   y: [],
   mode: 'Scatter',
@@ -11,18 +11,19 @@ var FOMARTTED_RUNNING_SUITES_DATA = {
   }
 };
 for (dataPoint of rawRunningWorkflowData.data) {
-  FOMARTTED_RUNNING_SUITES_DATA.x.push(dataPoint[0]);
-  FOMARTTED_RUNNING_SUITES_DATA.y.push(dataPoint[1]);
+  FOMARTTED_RUNNING_WORKFLOWS_DATA.x.push(dataPoint[0]);
+  FOMARTTED_RUNNING_WORKFLOWS_DATA.y.push(dataPoint[1]);
 }
 
-RUNNING_SUITES_PLOTTED = document.getElementById('running-suites-plotted');
+RUNNING_WORKFLOWS_PLOTTED =
+  document.getElementById('running-workflows-plotted');
 Plotly.plot(
-  RUNNING_SUITES_PLOTTED,
-  [FOMARTTED_RUNNING_SUITES_DATA],
+  RUNNING_WORKFLOWS_PLOTTED,
+  [FOMARTTED_RUNNING_WORKFLOWS_DATA],
   {
     paper_bgcolor: 'rgba(0,0,0,0)',  // transparent background part. 1
     plot_bgcolor: 'rgba(0,0,0,0)',  // transparent background part. 2
-    title: 'Number of research suites running (sampled)',
+    title: 'Number of research workflows running (sampled)',
     xaxis: {
       title: 'Date (start of year marked)',
       showgrid: false,
