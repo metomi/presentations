@@ -15,14 +15,15 @@ for (dataPoint of rawRunningWorkflowData.data) {
   FOMARTTED_RUNNING_WORKFLOWS_DATA.y.push(dataPoint[1]);
 }
 
-RUNNING_WORKFLOWS_PLOTTED =
+const RUNNING_WORKFLOWS_PLOTTED =
   document.getElementById('running-workflows-plotted');
+
 Plotly.plot(
   RUNNING_WORKFLOWS_PLOTTED,
   [FOMARTTED_RUNNING_WORKFLOWS_DATA],
   {
-    paper_bgcolor: 'rgba(0,0,0,0)',  // transparent background part. 1
-    plot_bgcolor: 'rgba(0,0,0,0)',  // transparent background part. 2
+    paper_bgcolor: 'rgba(0,0,0,0)',  // transparent background part 1
+    plot_bgcolor: 'rgba(0,0,0,0)',  // transparent background part 2
     title: 'Number of research workflows running (sampled)',
     xaxis: {
       title: 'Date (start of year marked)',
@@ -32,17 +33,20 @@ Plotly.plot(
         buttons: [
           {
             count: 1,
-            label: '1m',
+            label: 'Last 1 month',
             step: 'month',
             stepmode: 'backward'
           },
           {
             count: 6,
-            label: '6m',
+            label: 'Last 6 months',
             step: 'month',
             stepmode: 'backward'
           },
-          {step: 'all'}
+          {
+            step: 'all',
+            label: 'All data'
+          }
         ]
       },
       type: 'date'
@@ -51,7 +55,7 @@ Plotly.plot(
       showline: false
     },
     font: {
-      family: 'Trebuchet MS',
+      family: 'Trebuchet MS',  // same font as the slides
       size: 24,
       color: 'black'
     },
