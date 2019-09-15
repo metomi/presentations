@@ -22,10 +22,7 @@
   <link rel="stylesheet" href="https://openlayers.org/en/v5.3.0/css/ol.css"
    type="text/css">
 
-  <!-- Plotly JS: 1) use hosted script, compiled and minified plotly.js -->
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-  <!-- Oliver's scripts -->
+  <!-- Scripts for section 1-->
   <script type="text/javascript" src="js/jquery.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
   <script type="text/javascript" src="js/minicylc.js"></script>
@@ -77,7 +74,7 @@
     </div>
 
 
-    <!-- Setion 1 - Cylc 101 -->
+    <!-- Section 1 - Cylc 101 -->
     <div
       id="introduction-to-cylc"
       class="step"
@@ -580,6 +577,9 @@
       id="running-workflows-plot"
       class="step full vflex"
       >
+      <!-- Plotly 1) bundled core plotly JS script -->
+      <script type="text/javascript" src="js/plotly-latest.min.js"></script>
+
       <div id="running-workflows-plotted"></div>
       <!-- Plotly: 2) custom JS for MO research running workflows plot... -->
       <!-- the data for the plot, stored separately to the plotting script: -->
@@ -1151,8 +1151,8 @@
   <script>impress().init();</script>
 
   <!-- For OpenLayers map: 2) general source JS: grab scripts from source -->
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList,URL"></script>
-  <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+  <script src="js/openlayers-polyfill.js"></script>
+  <script src="js/openlayers-core.min.js"></script>
   <!-- For OpenLayers map: 3) custom JS script to create customised map -->
   <script type="text/javascript" src="js/sites-map.js"></script>
 
