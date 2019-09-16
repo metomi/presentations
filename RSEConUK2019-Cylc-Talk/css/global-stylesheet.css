@@ -198,7 +198,6 @@ body.impress-mouse-timeout {
             0px 0px;
         background-repeat:
             no-repeat;
-        color: white;
     }
     100% {
         /* state after the animation (~same as {body}) */
@@ -241,7 +240,6 @@ body.impress-mouse-timeout {
             0px 0px;
         background-repeat:
             no-repeat;
-        color: black;
     }
 }
 
@@ -280,6 +278,8 @@ body.impress-mouse-timeout {
         0px 0px;
     background-repeat:
         no-repeat;
+}
+#title-slide {
     color: white;
 }
 
