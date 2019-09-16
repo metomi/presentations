@@ -230,9 +230,14 @@ body.impress-mouse-timeout {
             200px,
             cover,
             100% 100%;
+        /* v back compat */
         background-position:
             0px 0px,
             0px -1500px,
+            0px 0px;
+        background-position:
+            0px 0px,
+            0px -120vh,  /* image may be taller than display */
             0px 0px;
         background-repeat:
             no-repeat;
@@ -279,7 +284,8 @@ body.impress-mouse-timeout {
 }
 
 .impress-on-introduction-to-cylc {
-    animation: titleout 5s;
+    animation: titleout 3s;
+    animation-timing-function: linear;
 }
 
 /* Substep plugin */
@@ -483,6 +489,7 @@ table.comparison-table > .p {
     font-size: 0.6em;
 }
 
+/* pygments stylesheet */
 .highlight .hll { background-color: #ffffcc }
 .highlight .c { color: #aaaaaa; font-style: italic } /* Comment */
 .highlight .err { color: #F00000; background-color: #F0A0A0 } /* Error */
