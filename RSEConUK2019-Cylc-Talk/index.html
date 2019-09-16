@@ -495,7 +495,7 @@
         <div id="curvedarrow"></div>
      </div>
 
-      <div><p>seamless (meta-scheduling) "R2O"/"O2R"
+      <div><p>seamless<br> (meta-scheduling)<br>
 	  transition</p></div>
 
       <!-- Struggled to align arrow via style, so hack with another flexbox -->
@@ -534,41 +534,28 @@
 
     <div
       id="met-office-figures"
-      class="step full vflex"
+      class="step vflex"
       >
-      <div class="flex-container">
 
-
-      <div class="flex-container-vert" style="flex-grow: 3">
-
-          <div style="flex-basis: 100px"></div>
-        <div>
-        demonstrated scaling to:
-          <ul>
-          <li><em>&tilde;1000s</em> of <em>recurrences</em></li><br>
-          <li><em>&tilde;10,000s</em> of <em>tasks</em></li><br>
-          <li><em>&tilde;100,000s</em> of <em>dependencies</em></li><br>
+      <p>
+        At the
+        <img src="media/met-office-brand/metoffice-logo-black.png"
+         alt="metoffice-logo-black"
+         style="height:100px; vertical-align:-0.6em">
+      </p>
+        <ul>
+          <li>demonstrated scaling to:</li>
+          <ul style="font-size: 0.8em;">
+            <li><em>&tilde;1000s</em> of <em>recurrences</em></li>
+            <li><em>&tilde;10,000s</em> of <em>tasks</em></li>
+            <li><em>&tilde;100,000s</em> of <em>dependencies</em></li>
           </ul>
-        </div>
-        </div>
-
-        <div class="flex-container-vert" style="flex-basis: 100px">
-            <div>
-              <img src="media/met-office-brand/metoffice-logo-black.png"
-                alt="metoffice-logo-black"
-                style="height:100px">
-            </div>
-        </div>
-
-        <div class="flex-container-vert" style="flex-grow: 2">
-          <div><p>used in <em>both</em><br> research &<br> operations</p></div>
-          <div style="flex-basis: 150px"></div>
-          <div>provides meta-scheduling for the workload on
-          our <em>460,672 CPU/core HPC estate</em> (with
-          <em>15,600 TFLOPs</em> peak performance)
-          </div>
-          </div>
-        </div>
+          <li>meta-scheduling for our HPCs:
+          <ul style="font-size: 0.8em;">
+            <li>overall estate with <em>460,672 CPUs/cores</em></li>
+            <li><em>15,600 TFLOPs</em> peak performance</li>
+          </ul>
+        </ul>
     </div>
 
     <div
@@ -1017,7 +1004,7 @@
       >
       <ul>
         <li><em>Cylc-8.0.0 "coming soon"</em> (<i>optimistic</i> estimate for
-          release ~May 2020)
+          release ~June 2020)
         </li>
         <li>Until then, <em>please use Cylc 7.8.<i>X</i></em> (the
 	  latest, currently
