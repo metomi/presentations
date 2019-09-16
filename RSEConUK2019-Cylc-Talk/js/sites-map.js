@@ -47,7 +47,7 @@ const cylcUsingSiteData = [
   { name: 'Met Office',
     shortName: false,
     devSite: true,
-    forceLabelCoors: [40, 5],
+    forceLabelCoors: [0, -30],
     latLonDecimalDegrees: [50.72762, -3.47564],
     umPartnerSite: true},
   { name: 'Geophysical Fluid Dynamics Laboratory (GFDL)',
@@ -235,9 +235,11 @@ function styleFunction(feature) {
   // Process site data to colour points & labels by type:
   var colour = cylcColours.yellow;
   var zindex = 0;
+  var showLabels = false;
   if (feature.get('devSite')) {
     colour = cylcColours.red;
     zindex = 2; // plot on top of other sites (most towards the foreground)
+    showLabels = true;
   }
 
   // There is no easy way to handle label overlapping in OpenLayers, so...
@@ -245,7 +247,7 @@ function styleFunction(feature) {
   var nameLabel;
   var labelOffsets = [0, 40]; // default for (2), override for cases here
   if (feature.get('shortName') && map.getView().getZoom() < 4) {
-    labelOffsets = [0, 20]; // decrease default as most names are shorter
+    labelOffsets = [0, 30]; // decrease default as most names are shorter
     nameLabel = feature.get('shortName');
   } else {
     nameLabel = wrapLabels(feature.get('name')); // full name
@@ -255,23 +257,26 @@ function styleFunction(feature) {
   if (coorsOrFalse) {
     labelOffsets = coorsOrFalse;
   };
+  if (!showLabels) {
+    nameLabel = "";
+  }
 
   // Define the style: standard, except with some customisations as above.
   var siteStyle = new ol.style.Style({
     zIndex: zindex,
     image: new ol.style.Circle({
-      radius: 6,
+      radius: 10,
       fill: new ol.style.Fill({
         color: colour
       }),
       stroke: new ol.style.Stroke({
         color: 'black',
-        width: 2
+        width: 3
       })
     }),
     text: new ol.style.Text({
       text: nameLabel,
-      font: '12px Calibri, sans-serif',
+      font: '22px Calibri, sans-serif',
       fill: new ol.style.Fill({
         color: 'black'
       }),
